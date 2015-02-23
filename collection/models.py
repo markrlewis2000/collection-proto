@@ -28,9 +28,10 @@ class Card(models.Model):
 class User(models.Model):
     user_firstname = models.CharField(max_length=256)
     user_lastname = models.CharField(max_length=256)
-    user_cards = models.ManyToManyField(Card, through='UserCards')
+    user_cards = models.ManyToManyField(Card)
+    #user_cards = models.ManyToManyField(Card, through='UserCards')
     
-class UserCards(models.Model):
-    cardid = models.ForeignKey(Card)
-    userid = models.ForeignKey(User)
-    count = models.IntegerField()        
+#class UserCards(models.Model):
+ #   cardid = models.ForeignKey(Card)
+  #  userid = models.ForeignKey(User)
+   # count = models.IntegerField()        

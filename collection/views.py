@@ -1,6 +1,6 @@
 from django.shortcuts import render_to_response
 from random import randrange
-from collection.models import Card, Collection, Team, User, UserCards
+from collection.models import Card, Collection, Team, User, UserCard
 
 # Create your views here.
 def index(request):
@@ -28,7 +28,7 @@ def index(request):
     
     for assignCard in cardPack:
         uc = UserCards(cardid_id=assignCard.id,userid_id=1,count=1)
-        UserCards.save(uc)
+        UserCards.save(assignCard)
     
     # send data to the template
     context = {
